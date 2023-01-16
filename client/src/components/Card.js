@@ -10,7 +10,7 @@ const Card = ({ postCard }) => {
    }
 
    return (
-      <article className="card">
+      <section className="card">
          <header className="card__header">
             <p className="card__header-name">{postCard.senderName}</p>
             <img
@@ -19,19 +19,21 @@ const Card = ({ postCard }) => {
                alt="stamp"
             />
          </header>
-         <div className="card__body">
-            <p>{postCard.message}</p>
-         </div>
-         <div className="card__footer">
-            <button className="card__delete-btn" onClick={handleDelete}>
-               Delete
-            </button>
-            <div className="card__footer-details">
-               <p className="card__footer-name">{postCard.receipentName}</p>
-               <address className="card__footer-address">{postCard.receipentAddress}</address>
+         <div>
+            <div className="card__body">
+               <p>{postCard.message}</p>
+            </div>
+            <div className="card__footer">
+               <button className="card__delete-btn" onClick={handleDelete}>
+                  Delete
+               </button>
+               <div className="card__footer-details">
+                  <p className="card__footer-name">{postCard.receipentName}</p>
+                  <address className="card__footer-address">{postCard.receipentAddress}</address>
+               </div>
             </div>
          </div>
-      </article>
+      </section>
    )
 }
 

@@ -1,12 +1,11 @@
-const mongoose = require('mongoose');
+/* eslint-disable semi */
+/* eslint-disable indent */
+const { connect } = require('mongoose')
 
 const connectDB = async () => {
-  await mongoose.connect('mongodb://saltadmin:episalt@localhost:27017/saltcarts', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  // eslint-disable-next-line no-console
-  console.log('MongoDB connected');
-};
+   await connect(`${process.env.MONGO_URI}`)
+   // eslint-disable-next-line no-console
+   console.log('MongoDB connected')
+}
 
-module.exports = connectDB;
+module.exports = connectDB
